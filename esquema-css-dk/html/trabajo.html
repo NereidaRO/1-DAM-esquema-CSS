@@ -530,9 +530,9 @@
           <figure>
             <img
               src="../images/elem-grid.png"
-              alt="codigo y resultado de propiedaddes de elementos grid"
+              alt="codigo ejemplo de propiedades de elementos grid"
             />
-            <figcaption>Elementos grid</figcaption>
+            <figcaption>Ejemplo de código de elementos grid</figcaption>
           </figure>
         </article>
         <article>
@@ -733,7 +733,7 @@
               >.
             </li>
             <li>
-              De vez en cuando, no es importante si el texto hace reflow y passa
+              De vez en cuando, no es importante si el texto hace reflow y pasa
               a otra línea. Tampoco hay que obcecarse con mantener el tamaño de
               línea perfecto.
             </li>
@@ -758,10 +758,56 @@
         </p>
         <article>
           <h3>Consideraciones</h3>
-          <ul></ul>
+          <ul class="first-level">
+            <li>
+              Utilizar archivos externos para enlazar la hoja de estilos con el
+              HTML de tu página. El navegador cargará una única vez la hoja de
+              estilos CSS y la conservará cacheada.
+            </li>
+            <li>
+              Adaptar previamente las imágenes al tamaño en que quieren ser
+              mostradas. Por ejemplo, si la imagen va a tener un tamaño máximo
+              de 100px por 100px, no es recomendable subirla de 500x500.
+            </li>
+            <li>
+              Usar colores con la notación hexadecimal (HEX) en lugar de RGB.
+            </li>
+            <li>
+              Utilizar selector universal * únicamente cuando sea necesario.
+            </li>
+            <li>
+              Organizar las reglas poniendo juntas las que tienen relación.
+              Además, se deben ordenar por orden alfabético las propiedades de
+              las reglas o selectores.
+            </li>
+            <li>
+              Comprimir hojas de estilo. En la medida de lo posible, se debe
+              utilizar la abreviación (por ejemplo, body { margin: 20px 10px 5px
+              10px }, en lugar de formulaciones detalladas como: body {
+              margin-top: 20px; margin-right: 10px; margin-bottom: 5px;
+              margin-left: 10px}). Es conveniente reducir el código CSS mediante
+              la eliminación de espacios innecesarios, líneas en blanco y
+              comentarios.
+            </li>
+          </ul>
         </article>
         <article>
           <h3>Herramientas</h3>
+          <ul class="first-level">
+            <li>
+              <a href="https://www.toptal.com/developers/cssminifier"
+                >CSS Minifier</a
+              >: minimiza al máximo el espacio que ocupa el documento CSS.
+            </li>
+            <li>
+              <a href="https://www.cssportal.com/css-optimize/">CSS Optimizer</a
+              >: elimina reglas de estilo redundantes.
+            </li>
+            <li>
+              <a href="https://unused-css.com/">Unused CSS</a>: evalúa si hay
+              reglas de estilo en el documento CSS que no se están aplicando.
+            </li>
+          </ul>
         </article>
       </section>
     </main>
