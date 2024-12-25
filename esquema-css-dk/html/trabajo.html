@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conceptos avanzados</title>
+    <meta name="author" content="Nereida Rodríguez Orenes" />
+    <meta name="keywords" content="CSS, summary, DAM, resumen" />
+    <meta name="description" content="simple guide to CSS" />
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body id="pag-avanzado">
+    <span id="easter-egg">¡Hola :)!</span>
+    <header>
+      <h1>Guía básica de CSS</h1>
+      <nav id="nav-header">
+        <ul>
+          <li><a href="../html/index.html">Conceptos básicos</a></li>
+          <li><a href="../html/estructura.html">Código</a></li>
+          <li><a href="../html/estetica.html">Estética</a></li>
+          <li><a href="../html/caja.html">Modelo de caja</a></li>
+          <li><a href="../html/trabajo.html">Conceptos avanzados</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="maquetacion">
+        <h2>Maquetación</h2>
+        <p>
+          La maquetación web engloba un conjunto de tareas y herramientas
+          utilizadas para definir la disposición de los distintos elementos
+          (imágenes, texto, etc…) que forman una página web para concretar la
+          estructura visual de la misma. A los esquemas que definen esta
+          estructura visual se les denomina <strong>layouts</strong>.
+        </p>
+        <ul>
+          <li>
+            <strong>Fixed</strong>: se establece un tamaño fijo en píxeles para
+            todos los elementos. Ofrece un control total pero en pantallas
+            pequeñas puede aparecer scroll horizontal y en pantallas muy anchas
+            un espacio en blanco alrededor de la página.
+          </li>
+          <li>
+            <strong>Elastic</strong>: se establece la anchura de los elementos
+            con em. Al hacer zoom se puede escalar el diseño, pero los elementos
+            que ocupen el mismo tamaño pueden solaparse y sigue apareciendo
+            scroll horizontal en pantallas pequeñas.
+          </li>
+          <li>
+            <strong>Fluid</strong>: se utiliza %, así que se mantienen las
+            proporciones en cualquier tipo de pantalla. Aun así, en pantallas
+            pequeñas las columnas pueden ser muy estrechas, provocando celdas
+            demasiado alargadas. Además, las imágenes y vídeos con tamaño fijo
+            dan problemas.
+          </li>
+          <li>
+            <strong>Híbridos con max/min width</strong>: se combinan los
+            anteriores casos con estas dos propiedades de la anchura. La
+            intención es que al crecer o decrecer, los contenedores no superen
+            ciertos límites.
+          </li>
+          <li>
+            <strong>Responsive</strong>: se trata de que los layouts cambien en
+            función de las características de la pantalla en la que se van a
+            mostrar; por tanto, se tienen varios layouts.
+          </li>
+        </ul>
+        <figure>
+          <img
+            src="../images/layout.png"
+            alt="monitores mostrando tipos de layout"
+          />
+          <figcaption>Concepto de layout</figcaption>
+        </figure>
+        <article>
+          <h3>Consideraciones previas</h3>
+          <p>Antes de comenzar a maquetar hay que tener en cuenta:</p>
+          <ol>
+            <li>
+              Se deben crear esquemas previos, crear bocetos de las interfaces.
+              Hay aplicaciones específicas para ello, como Mockflow, Ninjamock o
+              Moqups.
+            </li>
+            <li>
+              Se debe diseñar de lo grande a lo pequeño, es decir, definir la
+              distribución espacial de los contenidos antes de definir los
+              elementos del documento HTML.
+            </li>
+            <li>
+              Es recomendable usar las herramientas de desarrollador, a las que
+              se accede desde el navegador mediante F12 o la opción
+              Inspeccionar. Ayuda a identificar código asociado a las páginas,
+              entre otras cosas.
+            </li>
+            <li>
+              Tomar ideas de otras páginas, no para copiar y pegar sino como
+              inspiración.
+            </li>
+            <li>
+              Probar la página en diferentes navegadores. Cada uno tiene sus
+              hojas de estilo propias, así que no se va a ver igual el
+              resultado. Utilizar varios navegadores ayuda a corregir errores.
+            </li>
+            <li>Tener paciencia.</li>
+          </ol>
+        </article>
+        <article>
+          <h3>Conceptos clave</h3>
+          <div>
+            <h4>Flujo de elementos</h4>
+            <p>
+              Lo navegadores muestran los elementos en orden siguiendo dos
+              reglas básicas: cuando los elementos están en línea, parten de la
+              parte superior izquierda, se colocan de izquierda a derecha, de
+              modo que, cuando no caben más en una línea, los siguientes
+              elementos pasan a la siguiente línea del navegador; cuando los
+              elementos están en bloque, se apilan uno debajo del anterior. La
+              propiedad <em>display</em> especifica el tipo de flujo de cada
+              elemento en el navegador.
+            </p>
+            <ul>
+              <li>
+                <strong>inline</strong>: los elementos se posicionan de lado a
+                lado en la misma línea; solo aceptan margen horizontal e ignoran
+                la anchura y la altura. Etiquetas como <em>img</em>,
+                <em>span</em> o <em>a</em>, tienen este valor por defecto.
+              </li>
+              <li>
+                <strong>block</strong>: los elementos rompen el flujo y provocab
+                un salto de línea tanto anterior como posterior. Se posicionan
+                de arriba a abajo y no tienen las restricciones de los
+                anteriores. La mayoría de elementos de las páginas web tienen
+                este valor.
+              </li>
+              <li>
+                <strong>inline-block</strong>: los elementos fluyen con el texto
+                cmo un inline, pero aplican la asignación de anchura y altura y
+                se puede modificar su padding.
+              </li>
+              <li>
+                <strong>none</strong>: desactiva su presentación, sin dejar un
+                espacio vacío.
+              </li>
+              <li>
+                <strong>flex</strong>: se aplica al padre; sus contenedores
+                hijos podrán ser alineados y el espacio sobrante se puede
+                distribuir como considere el desarrollador también. Basa su
+                distribución en una dirección espacial. Hay instrucciones sobre
+                como usarlo en un enlace del footer.
+              </li>
+              <li>
+                <strong>grid</strong>: es similar a flex, pero se basa en dos
+                direcciones espaciales. Más adelante se explica en profundidad.
+              </li>
+            </ul>
+            <p>
+              Los valores relativos a tablas (<em>table</em>,
+              <em>table-row</em>, <em>table-cell</em>, <em>table-caption</em>,
+              etc.) permiten que la etiqueta simule el comportamiento del
+              elemento de tabla al que hace referencia.
+            </p>
+          </div>
+          <div>
+            <h4>Box-sizing</h4>
+            <p>
+              Hay que tener en cuenta que los elementos dentro del navegador
+              ocupan la anchura y la altura de su contenido, pero también las
+              dimensiones del padding y el borde. Para cuadrar este
+              comportamiento, existe la propiedad <em>box-sizing</em>. Su valor
+              por defecto es <em>content-box</em>, en el que, al indicar el
+              ancho o alto de un elemento, este es el del contenido, con lo que
+              el tamaño del borde y del padding se añadirán después. Si su valor
+              es <em>border-box</em>, este tamaño indicará tanto el contenido
+              como el borde y el padding.
+            </p>
+            <figure>
+              <img
+                src="../images/border-content.png"
+                alt="cajas con dos pixeles de diferencia"
+              />
+              <figcaption>
+                Comparación entre border-box y content-box con un borde de 1px y
+                un ancho de 100px
+              </figcaption>
+            </figure>
+          </div>
+          <div>
+            <h4>Centrado</h4>
+            <p>
+              Se puede centrar toda la página, textos o elementos concretos. Hay
+              varias maneras de lograrlo.
+            </p>
+            <ul class="first-level">
+              <li>
+                Centrado horizontal:
+                <ul class="second-level">
+                  <li>
+                    Si los elementos son inline se debe añadir
+                    <em>text-align: center;</em> al contenedor padre.
+                  </li>
+                  <li>
+                    Si se pretende centrar un elemento en bloque dentro de su
+                    contenedor, se le añade <em>margin: x auto;</em> y anchura.
+                  </li>
+                  <li>
+                    Para varios elementos en bloque dentro de un contenedor:
+                    <ul class="third-level">
+                      <li><em>text-align: center;</em> al padre.</li>
+                      <li>
+                        <em>display: inline-block;</em> a los elementos a
+                        centrar.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>Usar grid.</li>
+                </ul>
+              </li>
+              <li>
+                Centrado vertical:
+                <ul class="second-level">
+                  <li>
+                    Elementos inline:
+                    <ul class="third-level">
+                      <li>Asignar al padre el mismo padding arriba y abajo.</li>
+                      <li>
+                        Si es una celda de una tabla o se simula que lo es, se
+                        puede usar <em>vertical-align: middle;</em>.
+                      </li>
+                      <li>Con grid.</li>
+                    </ul>
+                  </li>
+                  <li>
+                    Elementos en bloque:
+                    <ul class="third-level">
+                      <li>
+                        Utilizando posicionamiento tanto en el padre como en el
+                        hijo.
+                      </li>
+                      <li>Con flexbox.</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4>Posicionamiento</h4>
+            <p>
+              Los elementos normalmente están dentro del flujo de la página. La
+              propiedad <em>position</em>, indica el tipo de posicionamiento
+              usado para un elemento cuando se desean mover los elementos con
+              respecto a donde les correspondería según el flujo normal. Le
+              acompañan las propiedades <em>top</em>, <em>bottom</em>,
+              <em>left</em>, <em>right</em> y <em>z-index</em>. Las cuatro
+              primeras indican desplazamiento conforme a un punto de referencia
+              y se expresan en px o %. En cambio, z-index sirve para indicar
+              capas, como una tercera dimensión, para evitar solapamientos; se
+              indica un número entero sin unidades, que representa la capa. La
+              capa por defecto es 0.
+            </p>
+            <figure>
+              <img
+                src="../images/position.png"
+                alt="cajas en poscionamientos diferentes"
+              />
+              <figcaption>Ejemplos de la propiedad position</figcaption>
+            </figure>
+            <p>Valores de position:</p>
+            <ul class="first-level">
+              <li>
+                <strong>static</strong>: el valor por defecto, flujo normal sin
+                posicionamiento.
+              </li>
+              <li>
+                <strong>relative</strong>: se posiciona respecto a su propia
+                posición original. Por ejemplo, con <em>left: 20px;</em> se
+                añadirían 20px a la izquierda, desplazándolo a la derecha.
+              </li>
+              <li>
+                <strong>fixed</strong>: en referencia al documento. Mantendrá
+                esa posición aunque el usuario haga scroll.
+              </li>
+              <li>
+                <strong>absolute</strong>: es como fixed, pero en referencia al
+                elemento padre posicionado más cercano o, si no hay, a la
+                ventana del navegador.
+              </li>
+              <li>
+                <strong>sticky</strong>: se comporta como relative hasta que se
+                llega, scrolleando, a una posición concreta, a partir de la cual
+                se comporta como fixed.
+              </li>
+              <li>
+                <strong>inherit</strong>: la propiedad position no se hereda,
+                así que hay que añadir este valor a los hijos si se pretende que
+                se propague en cascada.
+              </li>
+            </ul>
+            <p>
+              El posicionamiento es complicado, para profundizar y ver más
+              ejemplos, se puede visitar
+              <a href="https://www.w3schools.com/css/css_positioning.asp"
+                >Posicionamiento W3School</a
+              >. La cabecera de esta página también está posicionada, así que
+              con las herramientas de desarrollador (F12) se puede jugar con
+              ella en línea para probar opciones.
+            </p>
+          </div>
+          <div>
+            <h4>Elementos flotantes</h4>
+            <p>
+              La propiedad <em>float</em> especifica si un elemento debe salir
+              del flujo normal y aparecer a la izquierda o a la derecha de su
+              contenedor, donde los elementos de texto y los de línea aparecerán
+              a su alrededor. Es utilizada para envolver imágenes con texto.
+              Puede tener tres valores: <em>right</em>, el elemento flota a la
+              derecha de su bloque contenedor, <em>left</em>, flota a la
+              izquierda de su bloque contenedor, o <em>none</em>, valor por
+              defecto.
+            </p>
+            <p>
+              La propiedad <em>clear</em> se usa para controlar el
+              comportamiento de los elementos flotantes. Especifica si un
+              elemento puede estar al lado de elementos flotantes que lo
+              preceden o si debe ser movido (cleared) debajo de ellos. Puede
+              tener cuatro valores: <em>right</em>, el elemento es desplazado
+              hacia abajo para limpiar elementos flotantes a la derecha,
+              <em>left</em>, el elemento es desplazado hacia abajo para limpiar
+              elementos flotantes a la izquierda, <em>both</em>, el elemento es
+              desplazado hacia abajo para limpiar tanto elementos flotantes de
+              la izquierda como de la derecha, o <em>none</em>, valor por
+              defecto.
+            </p>
+            <p>
+              Puede darse la circunstancia de que un elemento flotante exceda
+              del tamaño de su contenedor, ya que este, para calcular sus
+              dimensiones, no atiende al elemento flotante. Para solucionar
+              esto, se pueden usar las propiedades <em>overflow-x</em> y
+              <em>overflow-y</em>.
+            </p>
+            <figure>
+              <img
+                src="../images/elem-flotantes.png"
+                alt="codigo y parrafo con imagen sobresaliendo a la derecha"
+              />
+              <figcaption>
+                Código de un div flotante que contiene una img flotante y un p
+                clear
+              </figcaption>
+            </figure>
+          </div>
+        </article>
+      </section>
+      <section id="grid-layout">
+        <h2>Maquetación Grid</h2>
+        <p>
+          En el footer hay un enlace con ejemplos visuales de combinaciones de
+          propiedades grid.
+        </p>
+        <figure>
+          <img
+            src="../images/resumen-grid.png"
+            alt="elementos grid dibujados"
+          />
+          <figcaption>Resumen visual de elementos grid</figcaption>
+        </figure>
+        <ul class="first-level">
+          <li>
+            <strong>Contenedor</strong>: elemento padre contenedor que definirá
+            la cuadrícula o rejilla mediante la propiedad
+            <em>display:grid</em> (establece una cuadrícula en bloque) o
+            <em>display:inline-grid</em> (establece una cuadrícula en línea).
+          </li>
+          <li>
+            <strong>Item o elemento</strong>: los elementos hijos que contiene
+            el contenedor.
+          </li>
+          <li>
+            <strong>Celda (grid cell)</strong>: unidad mínima de la cuadrícula
+            ("cuadrito").
+          </li>
+          <li><strong>Area (grid area)</strong>: conjunto de celdas.</li>
+          <li>
+            <strong>Banda (grid track)</strong>: banda horizontal o vertical de
+            celdas de la cuadrícula. Este concepto es similar al de fila o
+            columna.
+          </li>
+          <li>
+            <strong>Línea (grid line)</strong>: separador horizontal o vertical
+            de las celdas de la cuadrícula.
+          </li>
+        </ul>
+        <article>
+          <h3>Propiedades del contenedor</h3>
+          <p>
+            Primero, hay que utilizar la propiedad <em>display</em> con uno de
+            los valores mencionados con anterioridad. Después hay que
+            especificar la estructura de la cuadrícula. Antes de proceder, hay
+            que tener clara la distribución de los elementos deseada, para así
+            evitar problemas posteriores.
+          </p>
+          <details>
+            <summary>Las propiedades básicas son:</summary>
+            <ul class="first-level">
+              <li>
+                <strong>grid-template-columns</strong>: número y tamaño de las
+                diferentes columnas; tantos valores como columnas. Se pueden
+                usar px, %, fr (fracción del espacio restante) o auto (espacio
+                restante). Con la expresión "repeat(veces, tamaño)", se puede
+                acortar el código si varias columnas son iguales.
+              </li>
+              <li>
+                <strong>grid-template-rows</strong>: es como la anterior, pero
+                para filas.
+              </li>
+              <li>
+                <strong>grid-column-gap</strong>: separación entre columnas.
+              </li>
+              <li><strong>grid-row-gap</strong>: separación entre filas.</li>
+            </ul>
+          </details>
+          <details>
+            <summary>
+              Por defecto los elementos del GRID ocupan todo el ancho de la
+              celda que le corresponde, pero se puede optar por otro tipo de
+              alineaciones horizontales dando valores a la propiedad
+              <em>justify-items</em>.
+            </summary>
+            <ul class="first-level">
+              <li>
+                <strong>start</strong>: al principio de la celda (izquierda).
+              </li>
+              <li><strong>end</strong>: al final de la celda (derecha).</li>
+              <li><strong>center</strong>: centrados.</li>
+              <li>
+                <strong>stretch</strong>: ocupan todo el ancho (valor por
+                defecto).
+              </li>
+            </ul>
+          </details>
+          <details>
+            <summary>
+              Por lo que respecta a la alineación vertical, por defecto los
+              elementos GRID ocupan todo el alto de la celda que le corresponde,
+              pero se puede optar por otro tipo de alineaciones verticales
+              asignando valores a la propiedad <em>align-items</em>.
+            </summary>
+            <ul class="first-level">
+              <li>
+                <strong>start</strong>: al principio de la celda (arriba).
+              </li>
+              <li><strong>end</strong>: al final de la celda (abajo).</li>
+              <li><strong>center</strong>: centrados.</li>
+              <li>
+                <strong>stretch</strong>: ocupan todo el alto (valor por
+                defecto).
+              </li>
+            </ul>
+          </details>
+          <p>
+            Es posible y recomendable definir conjuntamente la alineación
+            horizontal y vertical de los elementos mediante la propiedad
+            <em>place-items</em>, indicando primero el valor para
+            <em>align-items</em> y a continuación para <em>justify-items</em>.
+          </p>
+          <figure>
+            <img
+              src="../images/contenedor-grid.png"
+              alt="codigo y resultado de contenedor grid"
+            />
+            <figcaption>Contenedor grid</figcaption>
+          </figure>
+        </article>
+        <article>
+          <h3>Propiedades de los elementos</h3>
+          <p>
+            Son los hijos directos del elemento contenedor. De manera individual
+            se pueden modificar sus propiedades para definir el área que van a
+            ocupar y especificar sus alineaciones horizontal y vertical.
+          </p>
+          <details>
+            <summary>Cuadrícula básica:</summary>
+            <ul class="first-level">
+              <li>
+                <strong>grid-column-start</strong>: en qué columna empieza el
+                elemento, generalmente se especifica la línea vertical.
+              </li>
+              <li>
+                <strong>grid-row-start</strong>: en qué fila empieza el
+                elemento, generalmente se especifica la línea horizontal.
+              </li>
+              <li>
+                <strong>grid-column-end</strong>: en qué columna acaba el
+                elemento, generalmente se especifica la línea vertical.
+              </li>
+              <li>
+                <strong>grid-row-end</strong>: en qué fila acaba el elemento,
+                generalmente se especifica la línea horizontal.
+              </li>
+              <li>
+                <strong>grid-column</strong>: propiedad comprimida (start/end).
+              </li>
+              <li>
+                <strong>grid-row</strong>: propiedad comprimida (start/end).
+              </li>
+            </ul>
+            <p>
+              Los valores de estas propiedades se pueden definir mediante el
+              número de línea (grid line) donde empieza o termina, los nombres
+              de las líneas donde empiezan o acaban las áreas, o usando span con
+              el valor de la extensión.
+            </p>
+            <p>
+              CSS asigna automáticamente un identificador numérico a cada grid
+              line. No obstante, si así lo desea, el desarrollador también puede
+              asignar identificadores personalizados a las grid lines mediante
+              corchetes y utilizar estos nombres como referencia.
+            </p>
+          </details>
+          <details>
+            <summary>Alineación vertical y horizontal:</summary>
+            <p>
+              Es posible asignar una alineación horizontal a un elemento de
+              manera individual, mediante la propiedad <em>justify-self</em>.
+              También se puede asignar una alineación vertical particular a un
+              elemento mediante la propiedad <em>align-self</em>. Sus valores
+              son los mismos que los que se han visto en el apartado anterior.
+            </p>
+          </details>
+          <figure>
+            <img
+              src="../images/elem-grid.png"
+              alt="codigo y resultado de propiedaddes de elementos grid"
+            />
+            <figcaption>Elementos grid</figcaption>
+          </figure>
+        </article>
+        <article>
+          <h3>Grid por áreas</h3>
+          <p>
+            es posible combinar celdas en áreas, nombrarlas y utilizarlas para
+            maquetar indicando el nombre y posición concreta de cada área del
+            Grid. Para ello se ha de utilizar la propiedad
+            <em>grid-template-areas</em> en el contenedor, donde se debe
+            especificar el orden de las áreas en la cuadrícula. Se pueden
+            utilizar símbolos especiales, como "none" (no se colocará ninguna
+            celda en esta posición) o "." (se colocará una celda vacía en esta
+            posición). Posteriormente, en cada ítem hijo, se ha de utilizar la
+            propiedad <em>grid-area</em> para indicar el nombre del área del que
+            se trata.
+          </p>
+          <figure>
+            <img src="../images/grid-area.png" alt="codigo de grid area" />
+            <figcaption>Ejemplo de código de grid por áreas</figcaption>
+          </figure>
+        </article>
+      </section>
+      <section class="responsive-design">
+        <h2>Diseño responsivo</h2>
+        <p>
+          Responsive Web Design (RWD) o Diseño Web Responsivo es una técnica
+          para desarrollar interfaces que hace uso de media queries y hojas de
+          estilos, estableciendo unas medidas de ancho en tamaños proporcionales
+          para hacer una estructura flexible y que el contenido de la web se
+          adapte a las distintas resoluciones de pantalla. Los sitios web
+          responsivos responden al tamaño del navegador en cualquier momento. No
+          importa cuál sea el ancho del navegador, ya que el sitio ajusta su
+          diseño (y a veces también su funcionalidad) de una manera optimizada
+          para la pantalla. De esta forma la experiencia de usuario no se ve
+          afectada.
+        </p>
+        <article>
+          <h3>Viewport y tipos de layout</h3>
+          <p>Fluid layout es el tipo que usa el diseño responsivo.</p>
+          <details>
+            <summary>Tipos de layout con detalles</summary>
+            <table>
+              <thead>
+                <tr>
+                  <th>Tipo</th>
+                  <th>Ventajas</th>
+                  <th>Desventajas</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Fixed</td>
+                  <td>
+                    Se tiene un control total sobre el layout ya que se
+                    especifican dimensiones fijas. Este tipo de Layouts puede
+                    tener sentido si no se quiere cambiar nunca el layout ni sus
+                    proporciones en ningún dispositivo.
+                  </td>
+                  <td>
+                    Puede aparecer un scroll horizontal en pantallas pequeñas
+                    (si no se escala).
+                  </td>
+                </tr>
+                <tr>
+                  <td>Elastic</td>
+                  <td>
+                    Control al hacer zoom-in y zoom-out. Se mantienen las
+                    proporciones.
+                  </td>
+                  <td>
+                    Muy similar a fixed, puesto que el tamaño de la letra está
+                    definido en píxeles. Es difícil calcular las dimensiones
+                    reales. Ems se calcula en relación al padre. Si se tienen
+                    diferentes tipos de letra, va a ser necesario hacer
+                    cálculos. No hay fluidez cuando cambia el tamaño de
+                    pantalla. No se adapta bien.
+                  </td>
+                </tr>
+                <tr>
+                  <td>Fluid/Liquid/Relative</td>
+                  <td>
+                    Se adapta al Viewport, al tamaño de lo que está viendo el
+                    usuario.
+                  </td>
+                  <td>-</td>
+                </tr>
+              </tbody>
+            </table>
+          </details>
+        </article>
+        <article>
+          <h3>Breakpoints y media queries</h3>
+          <p>
+            La anchura de la pantalla en la que se produce el cambio de diseño
+            es lo que se conoce como <em>breakpoint</em>. Se han hecho varios
+            estudios; nosotros vamos a utilizar los de la empresa Twitter, que
+            desarrolló <a href="https://getbootstrap.com/">Bootstrap</a>.
+          </p>
+          <ul class="first-level">
+            <li>Menos de 576px: pantallas pequeñas.</li>
+            <li>Entre 576px y 768px: móviles apaisados.</li>
+            <li>Entre 768px y 992px: tablets.</li>
+            <li>Entre 992px y 1200px: PC, desktop, ordenadores.</li>
+            <li>Más de 1200px: pantallas grandes.</li>
+          </ul>
+          <p>
+            Las <em>media queries</em> son un tipo de reglas de CSS que permiten
+            crear un bloque de código que sólo se procesará en los dispositivos
+            que cumplan los criterios especificados como condición.
+          </p>
+          <figure>
+            <img
+              src="../images/media-queries.png"
+              alt="codigo de varios media queries"
+            />
+            <figcaption>Algunos ejemplos de media queries</figcaption>
+          </figure>
+          <p>
+            La estrategia recomendable es crear reglas CSS generales para los
+            elementos y luego esecificar las particularidades de cada
+            dispositivo en los media queries. Un concepto interesante que
+            utiliza esta estrategia es
+            <a
+              href="https://developer.mozilla.org/es/docs/Glossary/Mobile_First"
+              >Mobile First</a
+            >.
+          </p>
+          <p>
+            Los valores que puede tener el mediatype, es decir, el tipo de medio
+            al que se le va a aplicar la condición, son:
+          </p>
+          <ul class="first-level">
+            <li>
+              <strong>screen</strong>: pantallas; ordenadores, móviles, etc. Es
+              el más normal.
+            </li>
+            <li>
+              <strong>print</strong>: medios impresos o pantallas de
+              previsualización de estos.
+            </li>
+            <li><strong>speech</strong>: lectores de texto para invidentes.</li>
+            <li>
+              <strong>all</strong>: todos los anteriores, es el que se suele
+              utilizar por defecto.
+            </li>
+          </ul>
+          <p>
+            Otros tipos de medios como <em>braille</em>, <em>embossed</em>,
+            <em>handheld</em>, <em>projection</em>, <em>tty</em> o
+            <em>tv</em> aún son válidos, pero están marcados como obsoletos.
+          </p>
+          <p>
+            Las condiciones pueden ser: <em>width</em>, <em>min-width</em>,
+            <em>max-width</em>, <em>height</em>, <em>min-height</em>,
+            <em>max-height</em>, <em>orientation (landscape / portrait)</em>,
+            <em>aspect-ratio</em>, <em>min-aspect-ratio</em>,
+            <em>max-aspect-ratio</em>, <em>color</em>, <em>min-color</em> o
+            <em>max-color</em>. Además, estas condiciones se pueden combinar y
+            modificar utilizando operadores como "and", "not", "all", "only".
+          </p>
+          <p>
+            Si llegas a un ancho de página de 100px con las herramientas de
+            desarrollador, encontrarás una sorpresa hecha con media queries.
+          </p>
+        </article>
+        <article>
+          <h3>Tablas y textos en diseños responsivos</h3>
+          <p>
+            Si tienen muchas columnas, pueden ocasionar un scroll horizontal en
+            toda la página, sobre todo si la pantalla es pequeña. Para ello hay
+            tres soluciones: esconder columnas, convertir las filas en listas o
+            crear un scroll horizontal que solo afecte a la tabla.
+          </p>
+          <p>
+            Para esta última estrategia, hay que envolver la tabla en un
+            contenedor (un div, por ejemplo), y al susodicho envoltorio,
+            añadirle la regla <em>overflow-x: auto</em> y <em>width: 100%</em>.
+            Las ventajas de esta técnica son que no se pierde información y se
+            respeta el diseño responsivo, aunque no se esta priorizando los
+            datos contenidos en la tabla (y aunque esté localizado, sigue
+            habiendo scroll).
+          </p>
+          <p>
+            En cuanto a los textos, si no se tiene cuidado pueden darse
+            problemas tales como líneas cortas con pocos caracteres, (lo que
+            dificulta la lectura), líneas largas con muchas caracteres (lo que
+            también dificulta la lectura), o caracteres muy pequeños. Lo ideal,
+            según estudios, es una letra de un tamaño adecuado, para poder leer
+            sin forzar la vista, y que se disponga formando líneas de entre
+            60-80 caracteres. Algunas pautas que pueden ayudar son:
+          </p>
+          <ul class="first-level">
+            <li>Utilizar medidas relativas, como vw.</li>
+            <li>
+              Calcular el tamaño máximo y mínimo con la función de CSS
+              <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/calc"
+                >calc()</a
+              >.
+            </li>
+            <li>
+              De vez en cuando, no es importante si el texto hace reflow y passa
+              a otra línea. Tampoco hay que obcecarse con mantener el tamaño de
+              línea perfecto.
+            </li>
+            <li>
+              Si hay que priorizar, es mejor tener en cuenta los móviles y
+              tablets (mobile first).
+            </li>
+            <li>
+              En algunos elementos, se pueden usar medidas fijas; por ejemplo,
+              en los menús de navegación.
+            </li>
+          </ul>
+        </article>
+      </section>
+      <section class="optimization">
+        <h2>Optimización</h2>
+        <p>
+          El servidor tiene que acceder a las hojas de estilo cada vez que un
+          usuario visita la página. Así, cuanto más grandes y complejos son los
+          archivos CSS, mayor será el tiempo de carga para ver los contenidos de
+          una web.
+        </p>
+        <article>
+          <h3>Consideraciones</h3>
+          <ul></ul>
+        </article>
+        <article>
+          <h3>Herramientas</h3>
+        </article>
+      </section>
+    </main>
+    <footer>
+      <div>
+        <span>Nereida Rodríguez Orenes</span>
+        <span>Lenguaje de Marcas 1ºDAM</span>
+        <span>Curso 2024/2025</span>
+      </div>
+      <div>
+        <span>Enlaces de interés</span>
+        <ul>
+          <li>
+            <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/"
+              >Flexbox</a
+            >
+          </li>
+          <li><a href="https://getbem.com/introduction/">BEM</a></li>
+          <li><a href="https://sass-guidelin.es/es/">Sass</a></li>
+          <li><a href="https://nekocalc.com/es">Calculadoras</a></li>
+          <li><a href="https://learncssgrid.com/">Grid</a></li>
+          <li><a href="https://fontawesome.com/icons">Iconos</a></li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+/*Easter egg*/
+body#pag-avanzado #easter-egg{
+    display: none;
+}
+@media all and (width: 100px) {
+    body#pag-avanzado{
+        margin: 0;
+        padding: 0;
+    }
+    body#pag-avanzado *{
+        display: none;
+    }
+    body#pag-avanzado #easter-egg{
+        display: block;
+        margin: 0;
+        padding: 0;
+        width: 90px;
+    }
+}
+/*Mobile*/
+header{
+    position: sticky;
+    top: 0;
+    background-color: white;
+}

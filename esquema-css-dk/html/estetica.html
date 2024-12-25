@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Estética básica</title>
+    <meta name="author" content="Nereida Rodríguez Orenes" />
+    <meta name="keywords" content="CSS, summary, DAM, resumen" />
+    <meta name="description" content="simple guide to CSS" />
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Guía básica de CSS</h1>
+      <nav id="nav-header">
+        <ul>
+          <li><a href="../html/index.html">Conceptos básicos</a></li>
+          <li><a href="../html/estructura.html">Código</a></li>
+          <li><a href="../html/estetica.html">Estética</a></li>
+          <li><a href="../html/caja.html">Modelo de caja</a></li>
+          <li><a href="../html/trabajo.html">Conceptos avanzados</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="colores">
+        <h2>Colores</h2>
+        <article>
+          <p>
+            Las propiedades más comunes para establecer los colores de los
+            elementos son <em>color</em>, que aplica color al texto, y
+            <em>background-color</em>, que aplica un color de fondo. Pueden
+            especificarse de varias maneras:
+          </p>
+          <ul>
+            <li>
+              <strong>Nombre</strong>: los navegadores pueden distinguir un
+              color mediante una palabra clave, su nombre en inglés; actualmente
+              hay 140.
+            </li>
+            <li>
+              <strong>RGB</strong>: componentes tricromáticas de rojo, verde y
+              azul con valores que van desde 0 hasta 255.
+            </li>
+            <li>
+              <strong>RGBA</strong>: añade al anterior el canal alfa, que
+              especifica la opacidad del color desde el 0.0 hasta el 1.0.
+            </li>
+            <li>
+              <strong>HSL</strong>: matiz, saturación y brillo con valores de 0
+              a 360 para el matiz y porcentuales para saturación y brillo.
+            </li>
+            <li><strong>HSLA</strong>: añade al anterior el canal alfa.</li>
+            <li>
+              <strong>HWB</strong>: matiz, nivel de blancos y nivel de negros
+              con valores porcentuales; se puede usar a partir de CSS4.
+            </li>
+            <li>
+              <strong>CMYK</strong>:cyan, magenta, amarillo y negro con valores
+              porcentuales; se puede usar a partir de CSS4.
+            </li>
+          </ul>
+          <p>
+            Para profundizar en el uso del color, es recomendable visitar esta
+            página:
+            <a href="https://www.w3schools.com/colors/default.asp"
+              >Colores W3School</a
+            >
+          </p>
+        </article>
+      </section>
+      <section id="fondos">
+        <h2>Fondos</h2>
+        <article>
+          <p>
+            Los fondos pueden ser colores e imágenes. En cuanto a los fondos de
+            colores, se puede utilizar el comando <em>background-color</em>,
+            como hemos visto anteriormente. También hay instrucciones para crear
+            gradientes, como
+            <em
+              >background-image: linear-gradient(to bottom right, red,
+              yellow)</em
+            >,
+            <em
+              >background-image: radial-gradient(red 5%, yellow 15%, green
+              60%)</em
+            >
+            o
+            <em
+              >background-image: conic-gradient(red, yellow, green, blue,
+              black)</em
+            >.
+          </p>
+          <p>
+            Esta propiedad <em>background-image</em> también se puede utilizar
+            para añadir imágenes. En esta tabla se resumen algunas reglas
+            útiles.
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Propiedad</th>
+                <th>Característica</th>
+                <th>Sintaxis</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr></tr>
+                <td>background-image</td>
+                <td>
+                  Permite utilizar una imagen como fondo de un elemento. Si el
+                  tamaño del elemento es superior que el de la imagen, esta se
+                  repetirá horizontal y verticalmente hasta cubrir todo el área
+                </td>
+                <td>background-image:url(“img.gif”);</td>
+              </tr>
+              <tr>
+                <td>background-repeat</td>
+                <td>
+                  permite restringir la repetición en dirección horizontal (x) o
+                  en dirección vertical (y).
+                </td>
+                <td>background-repeat:no-repeat; background-repeat:repeat-y;</td>
+              </tr>
+              <tr>
+                <td>background-position</td>
+                <td>Define la posición incial de la imagen de fondo especificada. Se especifica primero la posición horizontal (left, center o right) y, separada por un espacio, la posición vertical (top, center o bottom)</td>
+                <td>background-position: right top;</td>
+              </tr>
+              <tr>
+                <td>background-attachment</td>
+                <td>Determina si la imagen será fija dentro de la pantalla o se desplazará junto al bloque contenedor. Tiene dos valores posibles: scroll, con el que la imagen de fondo se moverá dentro de la pantalla junto al bloque que la contiene; fixed: con el que la imagen de fondo estará fija en la pantalla y no se moverá con el bloque contenedor.</td>
+                <td>background-attachment:scroll; background-attachment:fixed;</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Para profundizar en el uso de fondos es recomendable visitar esta página: <a href="https://www.w3schools.com/css/css3_backgrounds.asp">Fondos W3School</a></p>
+        </article>
+      </section>
+      <section id="ud-medida">
+        <h2>Unidades de medida</h2>
+        <p>Las medidas en CSS se emplean, entre otras, para definir la altura, anchura y márgenes de los elementos y para establecer el tamaño de letra del texto. Todas las medidas se indican como un valor numérico entero o decimal seguido de una unidad de medida (sin ningún espacio en blanco entre el número y la unidad de medida).</p>
+        <article>
+          <h3>Absolutas</h3>
+          <p>Son medidas fijas que no cambian, ideales, por ejemplo, para medios impresos. Actualmente no están recomendadas por su fata de flexibilidad.</p>
+          <table>
+            <thead>
+              <tr><th>Unidad</th>
+              <th>Significado</th>
+              <th>Medida (mm)</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>in</td>
+                <td>pulgadas</td>
+                <td>24.5</td>
+              </tr>
+              <tr>
+                <td>cm</td>
+                <td>centímetros</td>
+                <td>10</td>
+              </tr>
+              <tr>
+                <td>pc</td>
+                <td>picas</td>
+                <td>4.23</td>
+              </tr>
+              <tr>
+                <td>mm</td>
+                <td>milímetros</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>pt</td>
+                <td>puntos</td>
+                <td>0.35</td>
+              </tr>
+              <tr>
+                <td>px</td>
+                <td>píxeles</td>
+                <td>0.26</td>
+              </tr>
+              <tr>
+                <td>Q</td>
+                <td>cuartos de milímetro</td>
+                <td>0.248</td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+        <article>
+          <h3>Relativas</h3>
+          <p>Las unidades relativas definen su valor en relación con otra medida (resolución, densidad de pantalla, etc…), por lo que para obtener su valor real, se debe realizar alguna operación con el valor indicado. En el footer hay un enlace a las calculadoras Nekocalc.</p>
+          <table>
+            <thead>
+              <tr><th>Unidad</th>
+              <th>Significado</th>
+              <th>Relativa a</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>em</td>
+                <td>M</td>
+                <td>tamaño de fuente establecida en el navegdor</td>
+              </tr>
+              <tr>
+                <td>ex</td>
+                <td>X</td>
+                <td>mitad del tamaño de fuente del navegador</td>
+              </tr>
+              <tr>
+                <td>ch</td>
+                <td>zero width</td>
+                <td>tamaño del ancho del cero</td>
+              </tr>
+              <tr>
+                <td>rem</td>
+                <td>Root M</td>
+                <td>tamaño fuente raíz</td>
+              </tr>
+              <tr>
+                <td>%</td>
+                <td>porcentaje</td>
+                <td>contenedor padre</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>La unidad <em>em</em> se utiliza para hacer referencia al tamaño actual de la fuente que ha sido establecido en el navegador por el usuario, que habitualmente es un valor aproximado de 16px. La medida <em>ex</em> está basada en la altura de la x minúscula; <em>ch</em> equivale al tamaño de ancho del 0 de la fuente actual. La unidad <em>rem</em>, se basa en el tamaño raíz, es decir, el tamaño que ponemos mediante CSS en el body, y es la más versátil.</p>
+        </article>
+        <article>
+          <h3>Relativas: viewport</h3>
+          <p>Existen unas unidades de "nueva generación" que resultan muy útiles, porque dependen del <em>viewport</em> (región visible de la página web en el navegador). Con estas unidades se puede hacer referencia a un porcentaje concreto del tamaño específico que tengamos en la ventana del navegador, independientemente de si es redimensionado o no.</p>
+          <ul class="first-level">
+            <li><strong>vw</strong>: 1% del ancho del navegador.</li>
+            <li><strong>vh</strong>: 1% del alto del navegador.</li>
+            <li><strong>vmin</strong>: 1% del alto o ancho (el que sea más pequeño).</li>
+            <li><strong>vmax</strong>: 1% del alto o ancho (el que sea más grande).</li>
+          </ul>
+        </article>
+      </section>
+      <section id="texto-fuentes">
+        <h2>Texto y fuentes</h2>
+        <p>CSS permite dar formato a los textos, independientemente de su fuente, y cambiar las propiedades de esta última.</p>
+        <article>
+          <h3>Texto</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Propiedad</th>
+                <th>Característica</th>
+                <th>Ejemplo de sintaxis</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>text-align</td>
+                <td>Se usa para determinar la alineación horizontal de los textos. Así, un texto puede estar alineado a la izquierda (<em>left</em>), a la derecha (<em>right</em>), centrado (<em>centered</em>) o justificado (<em>justify</em>).</td>
+                <td>text-align: center;</td>
+              </tr>
+              <tr>
+                <td>text-decoration</td>
+                <td>Se usa para establecer o eliminar elementos decorativos de los textos. Los valores más frecuentes para esta propiedad son <em>none</em> (define un texto normal y es la opción por defecto), <em>underline</em> (subrayado), <em>overline</em> (dibuja una línea por encima del texto), <em>line-through</em> (tachado).</td>
+                <td>text-decoration: underline;</td>
+              </tr>
+              <tr>
+                <td>text-transform</td>
+                <td>Se usa para especificar las mayúsculas y las minúsculas en un texto. Presenta varios valores posibles: <em>none</em> (el texto tal cual escrito; opción por defecto), <em>capitalize</em> (pone en mayúsculas la primera letra de cada palabra), <em>uppercase</em> (pone en mayúsculas todas las letras) y <em>lowercase</em> (pone en minúsculas todos los caracteres).</td>
+                <td>text-transform: capitalize;</td>
+              </tr>
+              <tr>
+                <td>text-indent</td>
+                <td>Se usa para determinar la sangría de la primera línea de un texto. Especificable en px, pt, cm, em o %.</td>
+                <td>text-indent: 50px;</td>
+              </tr>
+              <tr>
+                <td>letter-spacing</td>
+                <td>Se usa para especificar el espacio entre caracteres en un texto, en px o cm.</td>
+                <td>letter-spacing: 3px;</td>
+              </tr>
+              <tr>
+                <td>line-height</td>
+                <td>Se usa para determinar el interlineado. Se puede expresar mediante un número que será multiplicado por el tamaño de fuente del texto, px, cm o %.</td>
+                <td>line-height: 0.7;</td>
+              </tr>
+              <tr>
+                <td>direction</td>
+                <td>Se usa para cambair la dirección de escritura de un texto. Sus dos valores más habituales son <em>ltr</em> (de izquierda a derecha) y <em>rtl</em> (de derecha a izquierda).</td>
+                <td>direction: rtl;</td>
+              </tr>
+              <tr>
+                <td>word-spacing</td>
+                <td>Se usa para aumentar o disminuir el espacio entre palabras, en px, pt, cm o em.</td>
+                <td>word-spacing: 10px;</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Para profundizar en esta sección se puede consultar la página: <a href="https://www.w3schools.com/css/css_text.asp">Texto W3School</a>.</p>
+        </article>
+        <article>
+          <h3>Fuentes</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Propiedad</th>
+                <th>Característica</th>
+                <th>Ejemplo de sintaxis</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>font-family</td>
+                <td>Permite definir la fuente que se utilizará en la página, pero dicha fuente deberá estar disponible en el equipo del usuario. Se pueden incluir varias familias de fuentes separadas por comas. Si el navegador no soporta la primera fuente, probará con la siguiente. Si el nombre de la familia de fuente contiene más de una palabra deberá ir escrita entre comillas.</td>
+                <td>font-family: "Times New Roman", Times, serif;</td>
+              </tr>
+              <tr>
+                <td>font-size</td>
+                <td>Se usa para determinar el tamaño de la fuente. Se recomienda utilizar medidas relativas, sobre todo em, para que el texto se adapte automáticamente a la pantalla de visualización.</td>
+                <td>font-size: 1.875em;</td>
+              </tr>
+              <tr>
+                <td>font-style</td>
+                <td>Se usa para determinar el estilo de la fuente. Hay tres valores muy comunes: <em>normal</em>, <em>italics</em> (cursiva) y <em>oblique</em> (más inclinada que la cursiva).</td>
+                <td>font-style: oblique;</td>
+              </tr>
+              <tr>
+                <td>font-weight</td>
+                <td>Se utiliza para determinar el grosor de los caracteres de un texto. Puede tener diferentes valores, entre los cuales los más usuales son: <em>normal</em>, <em>bold</em> (negrita), <em>bolder</em> (tipo de letra más gruesa que el elemento padre), <em>lighter</em> (tipo de letra menos gruesa que el tipo de letra del elemento padre); así como valores numéricos (400, 500, 600)</td>
+                <td>font-weight: 400;</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Para profundizar en estos conceptos se puede visitar: <a href="https://www.w3schools.com/css/css_font.asp">Fuente W3School</a></p>
+        </article>
+      </section>
+    </main>
+    <footer>
+      <div>
+        <span>Nereida Rodríguez Orenes</span>
+        <span>Lenguaje de Marcas 1ºDAM</span>
+        <span>Curso 2024/2025</span>
+      </div>
+      <div>
+        <span>Enlaces de interés</span>
+        <ul>
+          <li>
+            <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/"
+              >Flexbox</a
+            >
+          </li>
+          <li><a href="https://getbem.com/introduction/">BEM</a></li>
+          <li><a href="https://sass-guidelin.es/es/">Sass</a></li>
+          <li><a href="https://nekocalc.com/es">Calculadoras</a></li>
+          <li><a href="https://learncssgrid.com/">Grid</a></li>
+          <li><a href="https://fontawesome.com/icons">Iconos</a></li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>

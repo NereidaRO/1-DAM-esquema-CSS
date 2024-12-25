@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Código</title>
+    <meta name="author" content="Nereida Rodríguez Orenes" />
+    <meta name="keywords" content="CSS, summary, DAM, resumen" />
+    <meta name="description" content="simple guide to CSS" />
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Guía básica de CSS</h1>
+      <nav id="nav-header">
+        <ul>
+          <li><a href="../html/index.html">Conceptos básicos</a></li>
+          <li><a href="../html/estructura.html">Código</a></li>
+          <li><a href="../html/estetica.html">Estética</a></li>
+          <li><a href="../html/caja.html">Modelo de caja</a></li>
+          <li><a href="../html/trabajo.html">Conceptos avanzados</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="sintaxis">
+        <h2>Sintaxis</h2>
+        <p>
+          Primero hay que indicar el tipo de caracteres que se van utilizar. Se
+          puede hacer con <em>@charset</em> en la primera línea del documento
+          CSS, pero lo recomentado es utilizar una etiqueta <em>meta</em> en la
+          cabecera de la página.
+        </p>
+        <article id="reglas">
+          <h3>Regla de estilo</h3>
+          <figure>
+            <img
+              src="../images/regla-basica.png"
+              alt="esquema de regla de estilo CSS"
+            />
+            <figcaption>Estructura de regla de estilo</figcaption>
+          </figure>
+          <p>
+            Las reglas o instrucciones de estilo están formadas por un selector
+            y un bloque de declaraciones.
+          </p>
+          <p>
+            El selector determina el elemento HTML sobre el que se quiere
+            aplicar una determinada regla de estilo. El bloque de declaraciones
+            define las reglas de estilo, va entre llaves de apertura y cierre
+            “{}”, e incluye la propiedad CSS y su correspondiente valor.
+          </p>
+        </article>
+        <article id="selectores-basicos">
+          <h3>Selectores básicos</h3>
+          <details>
+            <summary>Selector de tipo o nombre de elemento</summary>
+            <p>
+              Permite aplicar un determinado estilo a todos los elementos del
+              tipo seleccionado, con independencia de posibles clases e
+              identificadores. Para poder afinar más la selección se deben
+              utilizar otros criterios de selección.
+            </p>
+          </details>
+          <details>
+            <summary>Referencias de clase</summary>
+            <p>
+              A un grupo de elementos HTML le añadimos el atributo class;
+              después, en la hoja de estilos, la llamamos con un punto seguido
+              del nombre.
+            </p>
+          </details>
+          <details>
+            <summary>Referencias de ID</summary>
+            <p>
+              Se asigna a una etiqueta concreta mediante el atributo id;
+              después, en la hoja de estilos, se llama utilizando el símbolo
+              almohadilla seguido del nombre. Un ID es un identificador único,
+              no se puede repetir entre etiquetas.
+            </p>
+          </details>
+          <details>
+            <summary>Pseudoclases</summary>
+            <p>
+              Las pseudoclases permiten crear referencias a un elemento mediante
+              información concreta, como una acción ("hover") o una posición
+              ("last-child"). Para usarlos, en la hoja de estilos se coloca la
+              clase, ID o elemento seguido de ":" y la pseudoclase.
+            </p>
+            <p>
+              Las pseudo-clases de tipo <em>child</em> permiten hacer referencia
+              a un elemento hijo de una serie que ocupa el lugar o número de
+              orden indicado en la propia instrucción, mientras que las
+              pseudo-clases definidas para la directiva <em>a</em> permiten
+              clasificar los hipervínculos.
+            </p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Pseudoclases tipo <em>child</em></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr></tr>
+                  <td>:nth-child()</td>
+                  <td>
+                    Entre paréntesis se especifica la posición del elemento,
+                    empezando desde el primero
+                  </td>
+                </tr>
+                <tr
+                  ><td>:first-child</td>
+                  <td>Primer elemento</td></tr
+                >
+                <tr
+                  ><td>:last-child</td>
+                  <td>Último elemento</td></tr
+                >
+                <tr
+                  ><td>:nth-last-child()</td>
+                  <td>
+                    Entre paréntesis se especifica la posición del elemento,
+                    empezando desde el último
+                  </td></tr
+                >
+              </tbody>
+            </table>
+            <table>
+              <thead>
+                <tr>
+                  <th>Pseudoclases para <em>a</em></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  ><td>:visited</td>
+                  <td>Vínculo visistado</td></tr
+                >
+                <tr
+                  ><td>:hover</td>
+                  <td>Vínculo donde está el ratón</td></tr
+                >
+                <tr
+                  ><td>:link</td>
+                  <td>Vínculo no visitado</td></tr
+                >
+                <tr
+                  ><td>:focus</td>
+                  <td>Vínculo seleccionado por teclado</td></tr
+                >
+                <tr
+                  ><td>:active</td>
+                  <td>Vínculo que recibe el clic</td></tr
+                >
+              </tbody>
+            </table>
+          </details>
+          <details>
+            <summary>Pseudoelementos</summary>
+            <p>
+              Los pseudo-elementos son una parte de algún elemento HTML que,
+              aunque no tienen identidad propia, pueden ser identificados por
+              las reglas de estilo y ser formateados de manera distinta a los
+              elementos a los que pertenecen. Se añaden utilizando el nombre del
+              elemento seguido de "::" y el nombre del pseudoelemento.
+            </p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Pseudoelementos más usados</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  ><td>::after</td>
+                  <td>Insertar algo después del elemento</td></tr
+                >
+                <tr
+                  ><td>::before</td>
+                  <td>Insertar algo antes del elemento</td></tr
+                >
+                <tr
+                  ><td>::first-letter</td>
+                  <td>Primera letra del elemento</td></tr
+                >
+                <tr
+                  ><td>:first-line</td>
+                  <td>Primera línea del elemento</td></tr
+                >
+                <tr
+                  ><td>::selection</td>
+                  <td>Una porción seleccionada por el elemento</td></tr
+                >
+              </tbody>
+            </table>
+          </details>
+          <details>
+            <summary>Selector universal</summary>
+            <p>
+              Se utiliza el asterisco (*) como selector. Si se usa solo implica
+              a todos los elementos de la página, aunque también se puede
+              escribir después de un elemento contenedor concreto para
+              especificar todos sus subelementos.
+            </p>
+          </details>
+        </article>
+        <article id="selectores-avanzado">
+          <h3>Criterios de selección</h3>
+          <details>
+            <summary>Selector descendiente</summary>
+            <p>
+              Ascendiente es el elemento que contiene al que se desea formatear,
+              que es descendiente. Existe un selector que relaciona todos los
+              elementos que son descendientes de un elemento específico. Para
+              seleccionar elementos en función del ascendiente, se usan dos
+              selectores separados por un espacio, siendo el primero de ellos el
+              ascendiente y el segundo el descendiente.
+            </p>
+          </details>
+          <details>
+            <summary>Selector de hijos</summary>
+            <p>
+              Padre es el elemento que contiene directamente al que se desea
+              formatear, al que llamamos hijo. Para seleccionar elementos en
+              función del padre se usan dos selectores separados por el símbolo
+              “mayor que” (>), siendo el primero el padre y el segundo el hijo.
+            </p>
+          </details>
+          <details>
+            <summary>Hermanos adyacentes</summary>
+            <p>
+              Los hermanos adyacentes son elementos que se sitúan de forma que
+              uno precede inmediatamente al otro, perteneciendo ambos al mismo
+              elemento padre. Para seleccionar elementos en función de hermanos
+              adyacentes, se usan dos selectores separados por el símbolo suma
+              (+). El primero de los selectores representa el hermano precedente
+              y el segundo el hermano al cual se quiere dar formato.
+            </p>
+          </details>
+          <details>
+            <summary>Hermanos generales</summary>
+            <p>
+              Los hermanos en general son elementos que comparten el mismo
+              elemento padre. Para indicar un selector en función de hermanos en
+              general se usan dos selectores separados por el símbolo tilde (~),
+              siendo el primero el elemento que precede (no necesariamente de
+              manera inmediata) al segundo selector, que es al que se quiere dar
+              formato.
+            </p>
+          </details>
+          <details>
+            <summary>Selector por atributo o valor de elemento</summary>
+            <p>
+              Se utiliza cuando se pretende aplicar estilo a elementos que
+              tienen un determinado atributo o valor de atributo dado. La forma
+              de declararlo es <em>elemento[atributo]</em>.
+            </p>
+            <table>
+              <th>
+                <tr>
+                  <td>Atributo o valor</td>
+                </tr>
+              </th>
+              <tbody>
+                <tr
+                  ><td>[attr=valor]</td>
+                  <td>
+                    Elementos cuyo atributo "attr" tenga exactamente el valor
+                    "valor"
+                  </td></tr
+                >
+                <tr
+                  ><td>[attr~=valor]</td>
+                  <td>
+                    Elementos cuyo atributo "attr" tenga por valor una lista de
+                    palabras separadas por espacios en blanco, una de las cuales
+                    es “valor”
+                  </td></tr
+                >
+                <tr
+                  ><td>[attr|=valor]</td>
+                  <td>
+                    Elementos cuyo atributo "attr" tenga exáctamente el valor
+                    “valor”, o que comienzan con “valor” inmediatamente seguido
+                    de un guión
+                  </td></tr
+                >
+                <tr
+                  ><td>[att^=valor]</td>
+                  <td>
+                    Elementos con el atributo "attr" cuyo valor comienza
+                    exactamente por la cadena e texto “valor”
+                  </td></tr
+                >
+                <tr
+                  ><td>[att$=valor]</td>
+                  <td>
+                    Elementos con el atributo "attr" cuyo valor finaliza con la
+                    cadena de texto “valor”
+                  </td></tr
+                >
+                <tr
+                  ><td>[att*=valor]</td>
+                  <td>
+                    Selecciona elementos con el atributo "attr" cuyo valor
+                    contiene en él al menos una vez la subcadena “valor”
+                  </td></tr
+                >
+              </tbody>
+            </table>
+          </details>
+          <article id="combinacion-union">
+            <h3>Unión y combinación de selectores</h3>
+            <p>
+              Todas las técnicas que hemos visto anteriormente se pueden
+              combinar entre sí para dar una mayor especificidad a la selección.
+            </p>
+            <h4>Clase/ID + elemento</h4>
+            <p>
+              Esta es una forma de selección muy utilizada y de gran precisión
+              que se emplea para dar formato y estilo solo a aquellos elementos
+              que se hayan etiquetado con una clase o con un identificador
+              concreto. Para ello se escribirá el nombre del elemento seguido de
+              un separador (el punto para las clases y la almohadilla para los
+              identificadores), y detrás el nombre de la clase o del
+              identificador correspondiente.
+            </p>
+            <h4>Unión</h4>
+            <p>
+              Cuando sea necesario aplicar las mismas reglas de estilo a varios
+              elementos, se pueden reutilizar declaraciones, agrupando
+              selectores, en lugar de repetir las mismas reglas de estilo con
+              diferentes selectores. Para ello se separan los selectores con una
+              coma.
+            </p>
+            <h4>Combinación</h4>
+            <p>
+              Para combinar estas técnicas, se deben respetar las normas de
+              escritura ya mencionadas (comas, almohadillas, puntos, corchetes,
+              espacios, etc.). Si se quiere ser muy específico, se pueden
+              juntar; si se quiere añadir los mismos estilos a varios puntos,
+              ser más genérico o usar las comas.
+            </p>
+          </article>
+        </article>
+      </section>
+      <section id="div-span">
+        <h3>Etiquetas "div" y "span"</h3>
+        <p>
+          Los elementos de HTML <em>span</em> y <em>div</em>, junto con los
+          atributos <em>class</em> e <em>id</em>, permiten seleccionar o agrupar
+          elementos de un documento HTML y así precisar a qué elementos se
+          quieren asignar las reglas de estilo CSS. Ambos son elementos que
+          implican ningún cambio de estilo por sí mismos. Tampoco añaden
+          contenido al HTML, sino que sirven para ayudar a organizar su
+          estructura y servir como selectores en reglas CSS.
+        </p>
+        <p>
+          <em>Span</em> sirve para crear un gancho en un texto, mientras que
+          <em>div</em> se utiliza para crear cajas (divisiones) dentro de otros
+          contenedores (etiquetas).
+        </p>
+        <figure>
+          <img src="../images/div-span.png" alt="html, css y resultado web" />
+          <figcaption>
+            Ejemplo del uso de <em>span</em> y <em>div</em> con CSS
+          </figcaption>
+        </figure>
+      </section>
+    </main>
+    <footer>
+      <div>
+        <span>Nereida Rodríguez Orenes</span>
+        <span>Lenguaje de Marcas 1ºDAM</span>
+        <span>Curso 2024/2025</span>
+      </div>
+      <div>
+        <span>Enlaces de interés</span>
+        <ul>
+          <li>
+            <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/"
+              >Flexbox</a
+            >
+          </li>
+          <li><a href="https://getbem.com/introduction/">BEM</a></li>
+          <li><a href="https://sass-guidelin.es/es/">Sass</a></li>
+          <li><a href="https://nekocalc.com/es">Calculadoras</a></li>
+          <li><a href="https://learncssgrid.com/">Grid</a></li>
+          <li><a href="https://fontawesome.com/icons">Iconos</a></li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>

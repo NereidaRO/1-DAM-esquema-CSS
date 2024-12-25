@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modelo de caja</title>
+    <meta name="author" content="Nereida Rodríguez Orenes" />
+    <meta name="keywords" content="CSS, summary, DAM, resumen" />
+    <meta name="description" content="simple guide to CSS" />
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Guía básica de CSS</h1>
+      <nav id="nav-header">
+        <ul>
+          <li><a href="../html/index.html">Conceptos básicos</a></li>
+          <li><a href="../html/estructura.html">Código</a></li>
+          <li><a href="../html/estetica.html">Estética</a></li>
+          <li><a href="../html/caja.html">Modelo de caja</a></li>
+          <li><a href="../html/trabajo.html">Conceptos avanzados</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="modelo-caja">
+        <h2>Modelo de caja</h2>
+        <p>
+          Los navegadores consideran cada elemento HTML como una caja. De este
+          modo, una página web es en interpretada por el navegador como un grupo
+          de cajas ordenadas siguiendo ciertas reglas.
+        </p>
+        <p>
+          CSS tiene un set predeterminado de propiedades destinadas a
+          sobrescribir los estilos provistos por navegadores y obtener la
+          organización deseada. Estas propiedades no son específicas, tienen que
+          ser combinadas para formar reglas que luego serán usadas para agrupar
+          cajas y obtener la correcta disposición en pantalla.
+        </p>
+        <article>
+          <h3>Modelo de caja tradicional</h3>
+          <figure>
+            <img src="../images/caja-tradi.png" alt="cajas dentro de cajas" />
+            <figcaption>Modelo de Caja Tradicional</figcaption>
+          </figure>
+          <p>
+            El <strong>borde</strong> es el límite que separa el elemento del
+            exterior y el <strong>margen</strong> es el espacio exterior, por
+            fuera del borde. El <strong>relleno</strong> o
+            <strong>padding</strong> es el espacio que queda entre el contenido
+            y el borde.
+          </p>
+        </article>
+      </section>
+      <section>
+        <h2>Partes de la caja</h2>
+        <article>
+          <h3>Bordes</h3>
+          <p>Propiedades:</p>
+          <ul class="first-level">
+            <li>
+              <strong>border-style</strong>: tipo de borde, puede tener desde
+              uno a cuatro valores uno por borde, en sentido de las agujas del
+              reloj empezando por el de arriba.
+              <ul class="second-level">
+                <li><em>none</em>: sin borde.</li>
+                <li>
+                  <em>hidden</em>: es como el anterior, pero se usa en tablas y
+                  casos conflictivos.
+                </li>
+                <li><em>dashed</em>: guiones.</li>
+                <li><em>dotted</em>: puntos.</li>
+                <li><em>double</em>: dos líneas rectas.</li>
+                <li><em>groove</em>: efecto de hundimiento del borde.</li>
+                <li><em>inset</em>: efecto hundimiento de la caja.</li>
+                <li><em>outset</em>: efecto salida de la caja.</li>
+                <li><em>ridge</em>: efecto salida del borde.</li>
+                <li><em>solid</em>: linea única, recta, completa.</li>
+              </ul>
+            </li>
+            <li>
+              <strong>border-width</strong>: Define el ancho del borde. Su valor
+              puede expresarse como un tamaño específico (px, pt, cm, em) o
+              usando valores predefinidos (<em>thin</em>, <em>medium</em> y
+              <em>thick</em>). Esta propiedad puede tener desde uno a cuatro
+              valores uno por borde, en sentido de las agujas del reloj
+              empezando por el de arriba.
+            </li>
+            <li>
+              <strong>border-color</strong>: pemite cambiar el color del borde o
+              definirlo como transparente (<em>transparent</em>). Permite hasta
+              4 colores, uno por borde, en sentido de las agujas del reloj
+              empezando por el de arriba.
+            </li>
+            <li>
+              <strong>border-radius</strong>: añade bordes redondeados; se
+              define con px o %.
+            </li>
+            <li>
+              <strong>border</strong>: se pueden definir directamente los
+              valores de ancho, estilo y color, separados por espacios.
+            </li>
+          </ul>
+          <figure>
+            <img
+              src="../images/border.png"
+              alt="caja cuadrada con distintos bordes"
+            />
+            <figcaption>Resumen de propiedades de los bordes</figcaption>
+          </figure>
+        </article>
+        <article>
+          <h3>Márgenes y padding</h3>
+          <p>
+            Las propiedades de márgenes permiten generar un espacio transparente
+            alrededor de un determinado elemento. Se pueden definir las
+            características de cada margen con diferentes instrucciones:
+            <em>margin-top</em> (margen superior), <em>margin-right</em> (margen
+            derecho), <em>margin-bottom</em> (margen inferior)o
+            <em>margin-left</em> (margen izquierdo). o simplemente margin. Para
+            colocar todos los márgenes, se utiliza <em>margin</em>, seguido de
+            los valores en el sentido de las agujas del reloj, empezando por
+            margin-top.
+          </p>
+          <p>
+            La propiedad padding se usa para generar un espacio alrededor del
+            contenido. El relleno limpia un área entre el contenido y el borde
+            de un elemento. Las reglas CSS se escriben como las del margen, pero
+            cambiando la palabra margin por la palabra padding.
+          </p>
+          <figure>
+            <img src="../images/margin-vs-padding.png" alt="codigo y texto" />
+            <figcaption>Comparación entre margin y padding</figcaption>
+          </figure>
+        </article>
+        <article>
+          <h3>Alto y ancho</h3>
+          <p>
+            Aunque cada elemento de la página adquiere un tamaño por defecto, es
+            recomendable definir sus dimensiones utilizando las propiedades
+            <em>width</em> (ancho) y <em>height</em> (alto). También se puede
+            definir el ancho o el alto máximo y mínimo de un elemento mediante
+            <em>max-width</em>, <em>max-height</em>, <em>min-width</em> y
+            <em>min-height</em>. Esta propiedad puede resultar muy útil cuando
+            la ventana de un navegador es más pequeña que el ancho de un
+            elemento y se quiere evitar que el navegador añada una barra de
+            desplazamiento.
+          </p>
+        </article>
+      </section>
+    </main>
+    <footer>
+      <div>
+        <span>Nereida Rodríguez Orenes</span>
+        <span>Lenguaje de Marcas 1ºDAM</span>
+        <span>Curso 2024/2025</span>
+      </div>
+      <div>
+        <span>Enlaces de interés</span>
+        <ul>
+          <li>
+            <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/"
+              >Flexbox</a
+            >
+          </li>
+          <li><a href="https://getbem.com/introduction/">BEM</a></li>
+          <li><a href="https://sass-guidelin.es/es/">Sass</a></li>
+          <li><a href="https://nekocalc.com/es">Calculadoras</a></li>
+          <li><a href="https://learncssgrid.com/">Grid</a></li>
+          <li><a href="https://fontawesome.com/icons">Iconos</a></li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>

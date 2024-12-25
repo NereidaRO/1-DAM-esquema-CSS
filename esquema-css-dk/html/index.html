@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS básico</title>
+    <meta name="author" content="Nereida Rodríguez Orenes" />
+    <meta name="keywords" content="CSS, summary, DAM, resumen" />
+    <meta name="description" content="simple guide to CSS" />
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Guía básica de CSS</h1>
+      <nav id="nav-header">
+        <ul>
+          <li><a href="../html/index.html">Conceptos básicos</a></li>
+          <li><a href="../html/estructura.html">Código</a></li>
+          <li><a href="../html/estetica.html">Estética</a></li>
+          <li><a href="../html/caja.html">Modelo de caja</a></li>
+          <li><a href="../html/trabajo.html">Conceptos avanzados</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="basic-concepts">
+        <h2>Conceptos básicos</h2>
+        <p>
+          <abbr title="Cascading Stylesheet">CSS</abbr> fue creado por la
+          <abbr title="World Wide Web Consortium">W3C</abbr> para poder separar
+          los estilos y el formato del contenido en páginas web. Los
+          <strong>estilos</strong> son reglas e instrucciones que definen el
+          aspecto de los elementos de una página web. Hay tres maneras de
+          aplicarlos:
+        </p>
+        <ul>
+          <li>
+            <strong>Estilo local o en línea</strong>: en cada etiqueta
+            <abbr title="Hypertext Mark Language">HTML</abbr> se utiliza un
+            atributo <em>style</em> en el que se ponen las reglas de estilo. Se
+            utiliza para obtener una vista rápida de lo que se pretende usar.
+          </li>
+          <li>
+            <strong>Estilos embebidos en "head"</strong>: en la etiqueta
+            <em>head</em> se añade una etiqueta <em>style</em> con referencias a
+            elementos del cuerpo. Es problemático porque, de hacer un cambio,
+            habría que modificar las páginas y subpáginas una a una.
+          </li>
+          <li>
+            <strong>Hoja de estilos externa</strong>: se añade una etiqueta
+            <em>link</em> en la cabecera, que apunte a un archivo CSS externo,
+            que contendrá las reglas de estilo. Es la manera recomendada ya que
+            un cambio afectaría a todas las páginas con las que esté enlazada.
+          </li>
+        </ul>
+        <p>
+          También hay que tener en cuenta que se dice que las hojas de estilos
+          son en cascada porque, si se define un estilo para un elemento
+          (ascendiente) que a su vez contiene a otros elementos (descendientes),
+          el estilo definido también se aplicará por defecto sobre estos últimos
+          a menos que se indique lo contrario en otra regla.
+        </p>
+      </section>
+      <figure>
+        <img src="../images/conceptos-basicos.png" alt="muestra de código" />
+        <figcaption>Resumen de las tres formas</figcaption>
+      </figure>
+    </main>
+    <footer>
+      <div>
+        <span>Nereida Rodríguez Orenes</span>
+        <span>Lenguaje de Marcas 1ºDAM</span>
+        <span>Curso 2024/2025</span>
+      </div>
+      <div>
+        <span>Enlaces de interés</span>
+        <ul>
+          <li>
+            <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/"
+              >Flexbox</a
+            >
+          </li>
+          <li><a href="https://getbem.com/introduction/">BEM</a></li>
+          <li><a href="https://sass-guidelin.es/es/">Sass</a></li>
+          <li><a href="https://nekocalc.com/es">Calculadoras</a></li>
+          <li><a href="https://learncssgrid.com/">Grid</a></li>
+          <li><a href="https://fontawesome.com/icons">Iconos</a></li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>
