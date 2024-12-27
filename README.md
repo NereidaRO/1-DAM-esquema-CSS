@@ -8,6 +8,8 @@ Fecha de inicio del proyecto: diciembre de 2024.
 
 Es un pequeño proyecto dentro del marco del primer trimestre de primero de DAM (Desarrollo de Aplicaciones Multiplataforma), así que se usan las tecnologías vistas hasta este momento en la asignatura correspondiente (Lenguaje de Marcas). Se puede encontrar, por tanto **HTML** y **CSS**.
 
+Suponiendo que este recurso se va a ver en ordenador o tablet, las vistas que se han utilizado para maquetar son 576px, 780px y 1200px.
+
 # Fuentes y autores
 
 Esta página es un resumen interactivo. Su principal fuente es la documentación sobre CSS proporcionada por Eduardo Castro Escudero. Algunos enlaces, anotaciones e imágenes son añadidos míos, de Nereida Rodríguez Orenes.
@@ -21,3 +23,7 @@ Se puede lanzar este conjunto de páginas desde VSCode utilizando la extensión 
 # Copyright
 
 Esto es un trabajo para una asignatura del instituto, así que no tiene ninguna clase de licencia ni ánimo de lucro. Aun así, como la mayoría del material original es de Eduardo Castro, profesor del IES Antonio José Cavanilles de Alicante, España, para utilizarlo es recomendable pedirle permiso a él.
+
+# Próximos pasos
+
+Cuando tenga más tiempo, posiblemente en verano, pretendo retocar la maquetación para que se vea bien en móviles (376px, etc.).
