@@ -12,6 +12,8 @@ Es un pequeño proyecto dentro del marco del primer trimestre de primero de DAM 
 
 Esta página es un resumen interactivo. Su principal fuente es la documentación sobre CSS proporcionada por Eduardo Castro Escudero. Algunos enlaces, anotaciones e imágenes son añadidos míos, de Nereida Rodríguez Orenes.
 
+Los favicon se han generado en https://favicon.io/ y la fuente es de https://fonts.google.com/
+
 # Cómo utilizarlo
 
 Se puede lanzar este conjunto de páginas desde VSCode utilizando la extensión LiveServer, o también se puede descargar y simplemente abrirlo con algún navegador. Si se tiene conexión a Internet, se puede clicar la dirección que proporciona GitHub, sin necesidad de descargar nada.

@@ -1,3 +1,12 @@
+/*Variables*/
+:root{
+    --black-blue: #021024;
+    --dark-blue: #052659;
+    --medium-blue: #5483B3;
+    --light-blue: #7DA0CA;
+    --white-blue: #C1E8FF;
+    --main-font: "Afacad Flux", serif;
+}
 /*Easter egg*/
 body#pag-avanzado #easter-egg{
     display: none;
@@ -18,8 +27,18 @@ body#pag-avanzado #easter-egg{
     }
 }
 /*Mobile*/
+body{
+    font-family: var(--main-font);
+    margin: 0;
+    padding: 0;
+}
 header{
     position: sticky;
     top: 0;
     background-color: white;
+}
+main{
+    background-color: var(--white-blue);
+    color: var(--black-blue);
+    
 }
